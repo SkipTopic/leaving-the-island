@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scenes/actors/player.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/pipoya/Male/Male 02-1.png" id="2_sheet"]
+[ext_resource type="Texture2D" path="res://assets/sprites/custom/slash.png" id="3_slash"]
+
+[sub_resource type="RectangleShape2D" id="feet_shape"]
+size = Vector2(12, 8)
+
+[sub_resource type="RectangleShape2D" id="hit_shape"]
+size = Vector2(32, 28)
+
+[sub_resource type="CircleShape2D" id="reach_shape"]
+radius = 24.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_script")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -14)
+texture = ExtResource("2_sheet")
+hframes = 3
+vframes = 4
+frame = 1
+
+[node name="FeetShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("feet_shape")
+
+[node name="SlashPivot" type="Node2D" parent="."]
+
+[node name="Slash" type="Sprite2D" parent="SlashPivot"]
+visible = false
+position = Vector2(0, -20)
+texture = ExtResource("3_slash")
+
+[node name="Hitbox" type="Area2D" parent="SlashPivot"]
+collision_layer = 0
+collision_mask = 8
+monitoring = false
+monitorable = false
+
+[node name="Shape" type="CollisionShape2D" parent="SlashPivot/Hitbox"]
+position = Vector2(0, -20)
+shape = SubResource("hit_shape")
+
+[node name="Reach" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="Shape" type="CollisionShape2D" parent="Reach"]
+position = Vector2(0, -8)
+shape = SubResource("reach_shape")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, -16)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0

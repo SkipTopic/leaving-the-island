@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/town/town_placeholder.gd" id="1_town"]
+[ext_resource type="Script" path="res://scenes/actors/player_ghost.gd" id="2_ghost"]
+
+[node name="TownPlaceholder" type="Node2D"]
+script = ExtResource("1_town")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.09, 0.12, 0.16, 1)
+
+[node name="Hint" type="Label" parent="."]
+offset_top = 8.0
+offset_right = 640.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 12
+text = "M0 占位房间 · 移动=WASD/方向键 · Esc=回标题 · 方块可移动=输入映射OK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 580.0
+offset_bottom = 320.0
+color = Color(0.16, 0.2, 0.2, 1)
+
+[node name="PlayerGhost" type="CharacterBody2D" parent="."]
+position = Vector2(320, 190)
+script = ExtResource("2_ghost")
+
+[node name="Body" type="ColorRect" parent="PlayerGhost"]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(0.92, 0.85, 0.65, 1)

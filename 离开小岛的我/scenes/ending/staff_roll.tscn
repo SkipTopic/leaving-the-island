@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ending/staff_roll.gd" id="1_roll"]
+
+[node name="StaffRoll" type="CanvasLayer"]
+layer = 96
+script = ExtResource("1_roll")

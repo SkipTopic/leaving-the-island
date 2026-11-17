@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://qhecxpbepoo2"
+path="res://.godot/imported/alan.dialogue-fc33ae4b819f1561d640d4346c621b65.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/town/alan.dialogue"
+dest_files=["res://.godot/imported/alan.dialogue-fc33ae4b819f1561d640d4346c621b65.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://ci4dhev30r8i5"
+path="res://.godot/imported/laoxiaozhang.dialogue-97fcdb15112b508e461fc936550135a2.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/town/laoxiaozhang.dialogue"
+dest_files=["res://.godot/imported/laoxiaozhang.dialogue-97fcdb15112b508e461fc936550135a2.tres"]
+
+[params]
+
+defaults=true

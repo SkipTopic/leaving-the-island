@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dj662mg8s1wah"
+path="res://.godot/imported/adou.dialogue-f71e52686d074124aac743e9a2db9f21.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/town/adou.dialogue"
+dest_files=["res://.godot/imported/adou.dialogue-f71e52686d074124aac743e9a2db9f21.tres"]
+
+[params]
+
+defaults=true

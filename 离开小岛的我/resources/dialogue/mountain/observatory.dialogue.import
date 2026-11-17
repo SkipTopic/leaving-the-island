@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c7pdjrkuujbcx"
+path="res://.godot/imported/observatory.dialogue-b62fb73f44ac31d55bc6cbdd4c7470f4.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/mountain/observatory.dialogue"
+dest_files=["res://.godot/imported/observatory.dialogue-b62fb73f44ac31d55bc6cbdd4c7470f4.tres"]
+
+[params]
+
+defaults=true

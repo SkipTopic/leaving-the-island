@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/actors/villager.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/pipoya/Female/Female 01-1.png" id="2_sheet"]
+[ext_resource type="Shader" path="res://assets/shaders/villager_transparent.gdshader" id="3_shader"]
+
+[sub_resource type="ShaderMaterial" id="transparent_mat"]
+shader = ExtResource("3_shader")
+shader_parameter/alpha = 0.52
+
+[sub_resource type="RectangleShape2D" id="body_shape"]
+size = Vector2(12, 8)
+
+[sub_resource type="CircleShape2D" id="reach_shape"]
+radius = 20.0
+
+[node name="Villager" type="CharacterBody2D"]
+collision_layer = 1
+collision_mask = 1
+script = ExtResource("1_script")
+sheet = ExtResource("2_sheet")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("transparent_mat")
+position = Vector2(0, -14)
+texture = ExtResource("2_sheet")
+hframes = 3
+vframes = 4
+frame = 1
+
+[node name="HeldItem" type="Sprite2D" parent="."]
+position = Vector2(0, -30)
+
+[node name="BodyShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("body_shape")
+
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -8)
+shape = SubResource("reach_shape")

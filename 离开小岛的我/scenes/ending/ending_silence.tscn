@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scenes/ending/ending_root.gd" id="1_root"]
+[ext_resource type="Resource" path="res://resources/dialogue/ending/ending_silence.dialogue" id="2_dlg"]
+[ext_resource type="PackedScene" path="res://scenes/actors/player.tscn" id="3_player"]
+[ext_resource type="PackedScene" path="res://scenes/actors/villager.tscn" id="4_villager"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/village_topdown_2x/GRASS TILE - DAY_2x.png" id="5_grass"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/village_topdown_2x/CHURCH - DAY_2x.png" id="6_church"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/village_topdown_2x/TREE 1 - DAY_2x.png" id="7_tree"]
+[ext_resource type="Texture2D" path="res://assets/sprites/custom/piano.png" id="8_piano"]
+[ext_resource type="Texture2D" path="res://assets/sprites/pipoya/Female/Female 03-1.png" id="9_alan"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/village_topdown_2x/GROUND TILE - DAY_2x.png" id="10_path"]
+
+[sub_resource type="RectangleShape2D" id="wall_h"]
+size = Vector2(768, 16)
+
+[sub_resource type="RectangleShape2D" id="wall_v"]
+size = Vector2(16, 448)
+
+[node name="EndingSilence" type="Node2D"]
+script = ExtResource("1_root")
+dialogue = ExtResource("2_dlg")
+black_cue = "black"
+walk_cues = PackedStringArray("walk")
+bounds = Rect2(0, 0, 768, 448)
+
+[node name="Ground" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(0, 0)
+texture = ExtResource("5_grass")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 768, 448)
+
+[node name="Paths" type="Node2D" parent="."]
+
+[node name="PathToChurch" type="Sprite2D" parent="Paths"]
+texture_repeat = 2
+position = Vector2(336, 240)
+texture = ExtResource("10_path")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 176)
+
+[node name="MorningLight" type="CanvasModulate" parent="."]
+color = Color(0.98, 0.9, 0.8, 1)
+
+[node name="Decor" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Hall" type="Sprite2D" parent="Decor"]
+position = Vector2(400, 240)
+texture = ExtResource("6_church")
+offset = Vector2(0, -112)
+
+[node name="Tree2" type="Sprite2D" parent="Decor"]
+position = Vector2(110, 250)
+texture = ExtResource("7_tree")
+offset = Vector2(0, -48)
+scale = Vector2(1.5, 1.5)
+
+[node name="Piano" type="Sprite2D" parent="Decor"]
+position = Vector2(368, 268)
+texture = ExtResource("8_piano")
+offset = Vector2(0, -15)
+
+[node name="Player" parent="Decor" instance=ExtResource("3_player")]
+position = Vector2(384, 420)
+spawn_point = Vector2(384, 420)
+
+[node name="Alan" parent="Decor" instance=ExtResource("4_villager")]
+position = Vector2(424, 276)
+npc_name = "阿蓝"
+sheet = ExtResource("9_alan")
+tint = Color(0.97, 0.95, 0.98, 1)
+sprite_scale = 0.92
+
+[node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 1
+
+[node name="Top" type="CollisionShape2D" parent="Walls"]
+position = Vector2(384, 8)
+shape = SubResource("wall_h")
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls"]
+position = Vector2(384, 440)
+shape = SubResource("wall_h")
+
+[node name="Left" type="CollisionShape2D" parent="Walls"]
+position = Vector2(8, 224)
+shape = SubResource("wall_v")
+
+[node name="Right" type="CollisionShape2D" parent="Walls"]
+position = Vector2(760, 224)
+shape = SubResource("wall_v")
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Marker_树" type="Marker2D" parent="Markers"]
+position = Vector2(200, 300)
+
+[node name="Marker_钢琴" type="Marker2D" parent="Markers"]
+position = Vector2(320, 302)

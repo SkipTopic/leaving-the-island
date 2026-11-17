@@ -1,0 +1,48 @@
+~ sleep
+if Game.get_flag("met_laoxiaozhang") == null
+	=> not_yet
+else
+	=> lay_down
+
+~ not_yet
+我: （还不困。白天的事，还没做完。）
+=> END
+
+~ lay_down
+我: （躺下。数着房梁上的木纹，睡意就漫上来了。）
+do Game.set_flag("sleep_requested", true)
+=> END
+
+~ eruption
+我: 半夜，我是被山叫醒的。
+我: 不是震——是叫。一声闷响从地底下滚过来，像有什么天一样大的东西在地心翻了个身。
+do StageDirector.shake_camera(6.0, 0.8)
+我: 窗户纸上，全是橘红色的光。
+do StageDirector.flash(Color(1.0, 0.55, 0.25, 0.5), 0.6)
+我: 天上下的不是雨，是黑雪。一片一片，落到屋顶上就着。
+我: 灰是热的。落在脸上，烫烫的，像谁撒了一把带火星的麸皮。
+do StageDirector.shake_camera(4.0, 0.6)
+do StageDirector.flash(Color(1.0, 0.45, 0.2, 0.35), 0.5)
+我: 六叔在街上吼：往滩上跑！拿湿被子！全镇的人拖着孩子、赶着羊往海边跑。
+我: 我跑回去抢我爸留下的相册。一根房梁砸下来——是六叔把我从梁底下拽出来的。
+我: 晚半秒，我这会儿就不在这儿讲这个故事了。
+我: （眉骨上那道疤，就是那晚留下的。）
+=> END
+
+~ morning
+我: 天亮了。灰还在下，细细的。
+我: 半山腰那排窗户，还亮着。亮着灯！还嗡嗡地响，像在干活，像个没事人。
+我: 镇上的声音都聚到小卖部门口去了。老校长说：山睡觉，不吵它，它不醒。现在它是被人吵醒的。
+我: 陈婆把手里那罐橘子糖往地上一放：那就上山，跟他讲理去。
+我: 我听见我自己说：我去吧。反正我光棍一条，没牵挂。
+我: （老校长翻出一本没了皮的旧字典给我：认字的人走到哪儿，都带着一个不打瞌睡的朋友。）
+do Game.set_flag("allowed_up_mountain", true)
+do StageDirector.notify("镇北出口 · 上山的路已经通了")
+do Game.set_flag("eruption_done", true)
+=> END
+
+~ nap
+我: （又睡了个回笼觉。灰从窗缝里钻进来，空气有点呛。）
+我: （——该起身了，今天要走很远的路。）
+do Game.set_flag("eruption_done", true)
+=> END

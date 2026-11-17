@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dpicxu72lfkmc"
+path="res://.godot/imported/intro.dialogue-af55493df0164f1670d249f25c6237ed.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/town/intro.dialogue"
+dest_files=["res://.godot/imported/intro.dialogue-af55493df0164f1670d249f25c6237ed.tres"]
+
+[params]
+
+defaults=true

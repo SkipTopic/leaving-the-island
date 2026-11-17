@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://d08kh6h7mvvpu"
+path="res://.godot/imported/road.dialogue-edfaddd0e5a84534be153b4a751a39b6.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/mountain/road.dialogue"
+dest_files=["res://.godot/imported/road.dialogue-edfaddd0e5a84534be153b4a751a39b6.tres"]
+
+[params]
+
+defaults=true

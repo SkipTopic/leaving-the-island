@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://1he40wed5x0l"
+path="res://.godot/imported/reveal.dialogue-ca1fcce191611b40d054363c236b2dc8.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/town/reveal.dialogue"
+dest_files=["res://.godot/imported/reveal.dialogue-ca1fcce191611b40d054363c236b2dc8.tres"]
+
+[params]
+
+defaults=true

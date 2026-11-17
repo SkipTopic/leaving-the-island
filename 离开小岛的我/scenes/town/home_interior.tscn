@@ -1,0 +1,296 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scenes/town/home_root.gd" id="1_tjbfo"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/topdown_basic/stone_floor.png" id="2_4b8pj"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/topdown_basic/wall_tiles.png" id="3_wxt2q"]
+[ext_resource type="Texture2D" path="res://assets/sprites/custom/bed.png" id="4_6hnve"]
+[ext_resource type="PackedScene" path="res://scenes/props/dialogue_prop.tscn" id="5_8tlcu"]
+[ext_resource type="Script" path="res://scenes/props/dialogue_prop.gd" id="6_71v2o"]
+[ext_resource type="Resource" path="res://resources/dialogue/town/eruption.dialogue" id="7_ckvtu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/custom/cabinet.png" id="8_esdme"]
+[ext_resource type="Texture2D" path="res://assets/sprites/custom/table.png" id="9_t8guy"]
+[ext_resource type="Texture2D" path="res://assets/sprites/custom/lamp.png" id="10_xhpm8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/custom/stool.png" id="11_ckt7a"]
+[ext_resource type="Texture2D" path="res://assets/sprites/custom/window.png" id="12_sx7a5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/custom/door_mat.png" id="13_uhefg"]
+[ext_resource type="PackedScene" path="res://scenes/actors/player.tscn" id="14_15kgc"]
+[ext_resource type="Script" path="res://scenes/actors/player.gd" id="15_3mlbc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/pipoya/Male/Male 02-1.png" id="16_thgnw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/custom/slash.png" id="17_3lxti"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kuft2"]
+texture = ExtResource("2_4b8pj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+1:6/0 = 0
+5:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrpwe"]
+texture = ExtResource("3_wxt2q")
+texture_region_size = Vector2i(32, 32)
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_td2ri"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_kuft2")
+sources/1 = SubResource("TileSetAtlasSource_wrpwe")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn4rs"]
+size = Vector2(28, 58)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pxbde"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w5pck"]
+radius = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhqwy"]
+size = Vector2(28, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_piihd"]
+size = Vector2(44, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o74xt"]
+size = Vector2(14, 8)
+
+[sub_resource type="RectangleShape2D" id="feet_shape"]
+size = Vector2(12, 8)
+
+[sub_resource type="RectangleShape2D" id="hit_shape"]
+size = Vector2(32, 28)
+
+[sub_resource type="CircleShape2D" id="reach_shape"]
+radius = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkivu"]
+size = Vector2(544, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6he35"]
+size = Vector2(240, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_au563"]
+size = Vector2(240, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afusx"]
+size = Vector2(32, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbsqw"]
+size = Vector2(32, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33iww"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t11d"]
+size = Vector2(56, 24)
+
+[node name="home_interior" type="Node2D" unique_id=843820393]
+script = ExtResource("1_tjbfo")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=2120883128]
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAYAAAABAAAAAQACAAYAAAACAAAAAQADAAYAAAADAAAAAQAEAAYAAAAEAAAAAQABAAYAAAAFAAAAAQACAAYAAAAGAAAAAQADAAYAAAAHAAAAAQAEAAYAAAAIAAAAAQABAAYAAAAJAAAAAQACAAYAAAAKAAAAAQADAAYAAAALAAAAAQAEAAYAAAAMAAAAAQABAAYAAAANAAAAAQACAAYAAAAOAAAAAQADAAYAAAAPAAAAAQAEAAYAAAAAAAEAAQABAAcAAAABAAEAAQACAAcAAAACAAEAAQADAAcAAAADAAEAAQAEAAcAAAAEAAEAAQABAAcAAAAFAAEAAQACAAcAAAAGAAEAAQADAAcAAAAHAAEAAQAEAAcAAAAIAAEAAQABAAcAAAAJAAEAAQACAAcAAAAKAAEAAQADAAcAAAALAAEAAQAEAAcAAAAMAAEAAQABAAcAAAANAAEAAQACAAcAAAAOAAEAAQADAAcAAAAPAAEAAQAEAAcAAAAAAAIAAAAAAAAAAAABAAIAAAABAAAAAAACAAIAAAAAAAAAAAADAAIAAAABAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAABAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAABAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAABAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAFAAEAAAAMAAIAAAAAAAAAAAANAAIAAAABAAAAAAAOAAIAAAAFAAEAAAAPAAIAAAABAAAAAAAAAAMAAAAAAAEAAAABAAMAAAABAAEAAAACAAMAAAAAAAEAAAADAAMAAAABAAEAAAAEAAMAAAAAAAEAAAAFAAMAAAABAAYAAAAGAAMAAAAAAAEAAAAHAAMAAAABAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAABAAEAAAAKAAMAAAAAAAEAAAALAAMAAAABAAEAAAAMAAMAAAAAAAEAAAANAAMAAAABAAEAAAAOAAMAAAAAAAEAAAAPAAMAAAABAAEAAAAAAAQAAAAAAAAAAAABAAQAAAABAAAAAAACAAQAAAAAAAAAAAADAAQAAAABAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAABAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAABAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAABAAAAAAAKAAQAAAAAAAAAAAALAAQAAAABAAAAAAAMAAQAAAAAAAAAAAANAAQAAAABAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAABAAAAAAAAAAUAAAAAAAEAAAABAAUAAAABAAEAAAACAAUAAAAAAAEAAAADAAUAAAABAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAABAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAABAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAABAAEAAAAKAAUAAAAAAAEAAAALAAUAAAABAAEAAAAMAAUAAAAAAAEAAAANAAUAAAABAAEAAAAOAAUAAAAAAAEAAAAPAAUAAAABAAEAAAAAAAYAAAAAAAAAAAABAAYAAAABAAAAAAACAAYAAAABAAYAAAADAAYAAAABAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAABAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAABAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAQAAAAKAAYAAAAAAAAAAAALAAYAAAABAAAAAAAMAAYAAAAAAAAAAAANAAYAAAABAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAABAAAAAAAAAAcAAAAAAAEAAAABAAcAAAABAAEAAAACAAcAAAAAAAEAAAADAAcAAAABAAEAAAAEAAcAAAAAAAEAAAAFAAcAAAABAAEAAAAGAAcAAAAAAAEAAAAHAAcAAAABAAEAAAAIAAcAAAAAAAQAAAAJAAcAAAABAAQAAAAKAAcAAAAAAAQAAAALAAcAAAABAAEAAAAMAAcAAAAAAAEAAAANAAcAAAABAAEAAAAOAAcAAAAAAAEAAAAPAAcAAAABAAEAAAAAAAgAAAAAAAAAAAABAAgAAAABAAAAAAACAAgAAAAAAAAAAAADAAgAAAABAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAABAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAABAAAAAAAIAAgAAAAAAAQAAAAJAAgAAAABAAQAAAAKAAgAAAABAAQAAAALAAgAAAABAAAAAAAMAAgAAAAAAAAAAAANAAgAAAABAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAABAAAAAAAAAAkAAAAAAAEAAAABAAkAAAABAAEAAAACAAkAAAAAAAEAAAADAAkAAAABAAEAAAAEAAkAAAAAAAEAAAAFAAkAAAAFAAEAAAAGAAkAAAAAAAEAAAAHAAkAAAABAAEAAAAIAAkAAAAAAAEAAAAJAAkAAAABAAEAAAAKAAkAAAAAAAQAAAALAAkAAAABAAQAAAAMAAkAAAAAAAEAAAANAAkAAAABAAEAAAAOAAkAAAAAAAEAAAAPAAkAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_td2ri")
+
+[node name="World" type="Node2D" parent="." unique_id=1898469502]
+y_sort_enabled = true
+
+[node name="Furniture" type="Node2D" parent="World" unique_id=1855849955]
+y_sort_enabled = true
+
+[node name="Furn_bed" type="StaticBody2D" parent="World/Furniture" unique_id=1833349898]
+position = Vector2(80, 96)
+
+[node name="Sprite" type="Sprite2D" parent="World/Furniture/Furn_bed" unique_id=817203750]
+texture = ExtResource("4_6hnve")
+offset = Vector2(0, -32.5)
+
+[node name="Shape" type="CollisionShape2D" parent="World/Furniture/Furn_bed" unique_id=1508020264]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_vn4rs")
+
+[node name="Prop_床" type="StaticBody2D" parent="World/Furniture" unique_id=2103050156 instance=ExtResource("5_8tlcu")]
+position = Vector2(84, 106)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("6_71v2o")
+prompt = "睡下"
+dialogue = ExtResource("7_ckvtu")
+dialogue_title = "sleep"
+
+[node name="Shape" type="CollisionShape2D" parent="World/Furniture/Prop_床" unique_id=2065087249]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_pxbde")
+
+[node name="InteractArea" type="Area2D" parent="World/Furniture/Prop_床" unique_id=1772912475]
+collision_layer = 2
+collision_mask = 0
+
+[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="World/Furniture/Prop_床/InteractArea" unique_id=105266925]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_w5pck")
+
+[node name="Furn_cabinet" type="StaticBody2D" parent="World/Furniture" unique_id=791492018]
+position = Vector2(432, 96)
+
+[node name="Sprite" type="Sprite2D" parent="World/Furniture/Furn_cabinet" unique_id=1908085913]
+texture = ExtResource("8_esdme")
+offset = Vector2(0, -20)
+
+[node name="Shape" type="CollisionShape2D" parent="World/Furniture/Furn_cabinet" unique_id=1300322847]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_rhqwy")
+
+[node name="Furn_table" type="StaticBody2D" parent="World/Furniture" unique_id=2107209316]
+position = Vector2(256, 208)
+
+[node name="Sprite" type="Sprite2D" parent="World/Furniture/Furn_table" unique_id=654253334]
+texture = ExtResource("9_t8guy")
+offset = Vector2(0, -12)
+
+[node name="Shape" type="CollisionShape2D" parent="World/Furniture/Furn_table" unique_id=856080435]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_piihd")
+
+[node name="Lamp" type="Sprite2D" parent="World/Furniture/Furn_table" unique_id=1297129716]
+position = Vector2(-10, -21)
+texture = ExtResource("10_xhpm8")
+offset = Vector2(0, -5)
+
+[node name="Furn_stool" type="StaticBody2D" parent="World/Furniture" unique_id=1860805127]
+position = Vector2(216, 224)
+
+[node name="Sprite" type="Sprite2D" parent="World/Furniture/Furn_stool" unique_id=1514052543]
+texture = ExtResource("11_ckt7a")
+offset = Vector2(0, -4)
+
+[node name="Shape" type="CollisionShape2D" parent="World/Furniture/Furn_stool" unique_id=1102264477]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_o74xt")
+
+[node name="Deco_window" type="Sprite2D" parent="World/Furniture" unique_id=33050437]
+position = Vector2(176, 48)
+texture = ExtResource("12_sx7a5")
+offset = Vector2(0, -14.5)
+
+[node name="@Sprite2D@6" type="Sprite2D" parent="World/Furniture" unique_id=93968846]
+position = Vector2(336, 48)
+texture = ExtResource("12_sx7a5")
+offset = Vector2(0, -14.5)
+
+[node name="Deco_door_mat" type="Sprite2D" parent="World/Furniture" unique_id=1462202170]
+position = Vector2(256, 324)
+texture = ExtResource("13_uhefg")
+offset = Vector2(0, -4)
+
+[node name="Player" type="CharacterBody2D" parent="World" unique_id=600992203 instance=ExtResource("14_15kgc")]
+position = Vector2(108, 100)
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("15_3mlbc")
+spawn_point = Vector2(108, 100)
+
+[node name="Sprite" type="Sprite2D" parent="World/Player" unique_id=1474747274]
+position = Vector2(0, -14)
+texture = ExtResource("16_thgnw")
+hframes = 3
+vframes = 4
+frame = 1
+
+[node name="FeetShape" type="CollisionShape2D" parent="World/Player" unique_id=853923526]
+position = Vector2(0, -4)
+shape = SubResource("feet_shape")
+
+[node name="SlashPivot" type="Node2D" parent="World/Player" unique_id=1825237761]
+
+[node name="Slash" type="Sprite2D" parent="World/Player/SlashPivot" unique_id=272839470]
+visible = false
+position = Vector2(0, -20)
+texture = ExtResource("17_3lxti")
+
+[node name="Hitbox" type="Area2D" parent="World/Player/SlashPivot" unique_id=2069617275]
+collision_layer = 0
+collision_mask = 8
+monitoring = false
+monitorable = false
+
+[node name="Shape" type="CollisionShape2D" parent="World/Player/SlashPivot/Hitbox" unique_id=1637194026]
+position = Vector2(0, -20)
+shape = SubResource("hit_shape")
+
+[node name="Reach" type="Area2D" parent="World/Player" unique_id=886849431]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="Shape" type="CollisionShape2D" parent="World/Player/Reach" unique_id=1323512082]
+position = Vector2(0, -8)
+shape = SubResource("reach_shape")
+
+[node name="Camera" type="Camera2D" parent="World/Player" unique_id=561830108]
+position = Vector2(0, -16)
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 512
+limit_bottom = 320
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="Walls" type="Node2D" parent="." unique_id=942516874]
+
+[node name="Wall_上" type="StaticBody2D" parent="Walls" unique_id=1772999408]
+position = Vector2(256, 32)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall_上" unique_id=685010001]
+shape = SubResource("RectangleShape2D_tkivu")
+
+[node name="Wall_下左" type="StaticBody2D" parent="Walls" unique_id=361528279]
+position = Vector2(104, 316)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall_下左" unique_id=1833265522]
+shape = SubResource("RectangleShape2D_6he35")
+
+[node name="Wall_下右" type="StaticBody2D" parent="Walls" unique_id=2080845687]
+position = Vector2(408, 316)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall_下右" unique_id=1883409762]
+shape = SubResource("RectangleShape2D_au563")
+
+[node name="Wall_左" type="StaticBody2D" parent="Walls" unique_id=1015799265]
+position = Vector2(-8, 160)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall_左" unique_id=1119530297]
+shape = SubResource("RectangleShape2D_afusx")
+
+[node name="Wall_右" type="StaticBody2D" parent="Walls" unique_id=1155883033]
+position = Vector2(520, 160)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall_右" unique_id=1544818317]
+shape = SubResource("RectangleShape2D_qbsqw")
+
+[node name="Wall_门槛" type="StaticBody2D" parent="Walls" unique_id=816459376]
+position = Vector2(256, 328)
+
+[node name="Shape" type="CollisionShape2D" parent="Walls/Wall_门槛" unique_id=163910871]
+shape = SubResource("RectangleShape2D_33iww")
+
+[node name="DoorZone" type="Area2D" parent="." unique_id=769821211]
+position = Vector2(256, 310)
+collision_layer = 0
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape2D" parent="DoorZone" unique_id=214795605]
+shape = SubResource("RectangleShape2D_0t11d")
+
+[node name="WarmTint" type="CanvasModulate" parent="." unique_id=779828224]
+color = Color(1, 0.94, 0.84, 1)

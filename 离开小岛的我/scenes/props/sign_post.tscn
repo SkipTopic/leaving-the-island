@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/props/sign_post.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/custom/sign_north.png" id="2_tex"]
+
+[sub_resource type="RectangleShape2D" id="post_shape"]
+size = Vector2(16, 10)
+
+[sub_resource type="CircleShape2D" id="reach_shape"]
+radius = 18.0
+
+[node name="SignPost" type="StaticBody2D"]
+collision_layer = 1
+collision_mask = 0
+script = ExtResource("1_script")
+sign_text = "镇北 · 通往山里的路。灰厚，但路好走。（M2 开通）"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+offset = Vector2(0, -9)
+texture = ExtResource("2_tex")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("post_shape")
+
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -8)
+shape = SubResource("reach_shape")

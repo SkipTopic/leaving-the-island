@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bqbpc85bwbeba"
+path="res://.godot/imported/liushu.dialogue-b8aa5ac328289647fe338fab6dca6dc3.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/town/liushu.dialogue"
+dest_files=["res://.godot/imported/liushu.dialogue-b8aa5ac328289647fe338fab6dca6dc3.tres"]
+
+[params]
+
+defaults=true

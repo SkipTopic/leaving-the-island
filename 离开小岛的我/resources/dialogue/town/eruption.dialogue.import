@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cc37eu1ve8w3w"
+path="res://.godot/imported/eruption.dialogue-667ce171923b7f5b706b8301ea084452.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/town/eruption.dialogue"
+dest_files=["res://.godot/imported/eruption.dialogue-667ce171923b7f5b706b8301ea084452.tres"]
+
+[params]
+
+defaults=true

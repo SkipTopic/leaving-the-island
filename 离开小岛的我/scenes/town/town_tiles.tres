@@ -1,0 +1,109 @@
+[gd_resource type="TileSet" format=3 uid="uid://bwwwy4hjqmael"]
+
+[ext_resource type="Texture2D" uid="uid://c5xw5y875eueb" path="res://assets/tilesets/village_topdown_2x/GRASS TILE - DAY_2x.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cjp2htyqy1ntt" path="res://assets/tilesets/village_topdown_2x/GROUND TILE - DAY_2x.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b4sv461vrhojp" path="res://assets/tilesets/village_topdown_2x/WATER TILE - DAY_2x.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://d2fg3irxdqm4m" path="res://assets/tilesets/stitched/grass_details.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://ckk7p8gjvoe4d" path="res://assets/tilesets/stitched/ground_details.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d3fpioclvpup8" path="res://assets/tilesets/stitched/water_details.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://btrvbukpc5voh" path="res://assets/tilesets/generated/grass_dark.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bv06rhexefm3x" path="res://assets/tilesets/generated/grass_light.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bjfio0seugs8l" path="res://assets/tilesets/generated/grass_patch.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://byh61pwb8uj7g" path="res://assets/tilesets/generated/road_asphalt.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dbk0pqal6sk8w" path="res://assets/tilesets/generated/road_dash.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cbwbnoi8bd8m7" path="res://assets/tilesets/generated/road_edge_l.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://bbh3xs014e6ri" path="res://assets/tilesets/generated/road_edge_r.png" id="13"]
+
+[sub_resource type="TileSetAtlasSource" id="src_grass"]
+texture = ExtResource("1")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_path"]
+texture = ExtResource("2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_road_dash"]
+texture = ExtResource("11")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_road_edge_l"]
+texture = ExtResource("12")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_road_edge_r"]
+texture = ExtResource("13")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_water"]
+texture = ExtResource("3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_gdet"]
+texture = ExtResource("4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_pdet"]
+texture = ExtResource("5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_wdet"]
+texture = ExtResource("6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_grass_dark"]
+texture = ExtResource("7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_grass_light"]
+texture = ExtResource("8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_grass_patch"]
+texture = ExtResource("9")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="src_asphalt"]
+texture = ExtResource("10")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("src_grass")
+sources/1 = SubResource("src_path")
+sources/2 = SubResource("src_water")
+sources/3 = SubResource("src_gdet")
+sources/4 = SubResource("src_pdet")
+sources/5 = SubResource("src_wdet")
+sources/6 = SubResource("src_grass_dark")
+sources/7 = SubResource("src_grass_light")
+sources/8 = SubResource("src_grass_patch")
+sources/9 = SubResource("src_asphalt")
+sources/10 = SubResource("src_road_dash")
+sources/11 = SubResource("src_road_edge_l")
+sources/12 = SubResource("src_road_edge_r")

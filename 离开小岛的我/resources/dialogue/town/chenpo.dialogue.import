@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://3xp5jvi3lsjs"
+path="res://.godot/imported/chenpo.dialogue-9b284a22efabb06fac97b797d2333f90.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/town/chenpo.dialogue"
+dest_files=["res://.godot/imported/chenpo.dialogue-9b284a22efabb06fac97b797d2333f90.tres"]
+
+[params]
+
+defaults=true
